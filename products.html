@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leah's School Supplies</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header id="header">
+            <h1><a href="#">Ka Leah Paper Per Ream</a></h1>
+            <div id="navigation-bar">
+                <span id="menu-icon">&#9776;</span>
+                <ul id="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div id="mobile-navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+<main>
+    <!-- Search Bar for filtering products -->
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search for items (e.g., glue, notebook)...">
+    </div>
+    
+    <!-- Message shown when search finds nothing -->
+    <h2 id="no-results-message">No Results Found</h2>
+
+    <!-- Product Grid Container (Uses CSS Grid) -->
+    <div id="grid">
+
+        <!-- Category 1 -->
+        <div id="productcategory1" class="product">
+            <select>
+                <option disabled selected>Paper and Notebooks</option>
+                <option>Writing Notebooks (10 pcs): ₱220.00</option>
+                <option>Writing Pads (Grade 1, 2, 3 - 80 leaves): ₱20.00 each</option>
+                <option>Crosswise Pad (80 leaves): ₱17.00</option>
+                <option>Lengthwise Pad (80 leaves): ₱17.00</option>
+                <option>1/4 Pad (80 leaves): ₱10.00</option>
+                <option>Manila Paper: ₱9.00 each</option>
+                <option>Index Cards (100 pcs) - White: ₱65.00</option>
+                <option>Index Cards (100 pcs) - Pink: ₱115.00</option>
+                <option>Index Cards (100 pcs) - Blue: ₱115.00</option>
+            </select>
+        </div>
+
+        <!-- Category 2 -->
+        <div id="productcategory2" class="product">
+            <select>
+                <option disabled selected>Writing Instruments & Art</option>
+                <option>Flexstick Ballpen (Black - 12pcs): ₱65.00</option>
+                <option>Flexstick Ballpen (Red - 12pcs): ₱70.00</option>
+                <option>Flexstick Ballpen (Blue - 12pcs): ₱70.00</option>
+                <option>HBW 2000 Ballpen (Black - 12pcs): ₱60.00</option>
+                <option>HBW Pencil No. 2 (12pcs): ₱62.00</option>
+                <option>HBW Pencil No. 2 (Per Piece): ₱7.00</option>
+                <option>HBW Permanent Marker (Red/Blue/Black): ₱15.00 each</option>
+                <option>HBW Whiteboard Marker (Red/Blue/Black): ₱25.00 each</option>
+                <option>HBW Crayons - 16's: ₱44.00</option>
+                <option>HBW Crayons - 24's: ₱55.00</option>
+            </select>
+        </div>
+
+        <!-- Category 3 -->
+        <div id="productcategory3" class="product">
+            <select>
+                <option disabled selected>Envelopes & Folders</option>
+                <option>Brown Envelopes Short 50pcs: ₱115.00</option>
+                <option>Brown Envelopes Long 50pcs: ₱140.00</option>
+                <option>White Folders Short 25pcs: ₱130.00</option>
+                <option>White Folders Long 25pcs: ₱145.00</option>
+                <option>Coins Envelope Kraft 500pcs: ₱360.00</option>
+                <option>Plastic Envelope Short 25's: ₱245.00</option>
+                <option>Plastic Envelope Long 25's: ₱305.00</option>
+                <option>Expanded Envelope (Colors): ₱16.00 each</option>
+            </select>
+        </div>
+
+        <!-- Category 4 -->
+        <div id="productcategory4" class="product">
+            <select>
+                <option disabled selected>Adhesives (Glue & Tape)</option>
+                <option>HBW White Glue 40gms: ₱15.00</option>
+                <option>HBW Glue Stick 8g: ₱18.00</option>
+                <option>Duct Tape Gray: ₱55.00</option>
+                <option>Masking Tape 1/2 inch: ₱17.00</option>
+                <option>Masking Tape 3/4 inch: ₱23.00</option>
+                <option>Armak Scotch Tape BIG 1/2: ₱13.00</option>
+                <option>Armak Scotch Tape BIG 1 inch: ₱22.00</option>
+                <option>TUFF Clear Packaging Tape: ₱25.00</option>
+            </select>
+        </div>
+
+        <!-- Category 5 -->
+        <div id="productcategory5" class="product">
+            <select>
+                <option disabled selected>Fasteners & Clips</option>
+                <option>Binder Clips 2 inches (12pcs): ₱85.00</option>
+                <option>TM Paper Fastener 70mm (50pcs): ₱65.00</option>
+                <option>TM Paper Clip Small (100pcs): ₱12.00</option>
+                <option>TM Paper Clip Big (100pcs): ₱25.00</option>
+            </select>
+        </div>
+
+        <!-- Category 6 -->
+        <div id="productcategory6" class="product">
+            <select>
+                <option disabled selected>Office Papers & Accessories</option>
+                <option>Fox Bond Paper Short: ₱320.00</option>
+                <option>Classic Mail Bond Paper Long: ₱380.00</option>
+                <option>Best Print Bond Paper Long: ₱550.00</option>
+                <option>Carbonized Receipt 1/4: ₱22.00</option>
+                <option>Vellum A4 200gsm: ₱50.00</option>
+                <option>Sharpener 2 hole: ₱5.00</option>
+                <option>TM Correction Tape: ₱20.00</option>
+                <option>Staples No.35 (Box): ₱48.00</option>
+            </select>
+        </div>
+    </div>
+</main>
+        <footer id="contact">
+            <h3>Contact Us For Inquiries and Orders</h3>
+            <p>Phone: <a href="tel:+639277385656">+63 927 738 5656</a></p>
+            <p>Email: <a href="mailto:zafelei16@gmail.com">zafelei16@gmail.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/639277385656" target="_blank">+63 927 738 5656</a></p>
+            <p>Messenger: <a href="https://www.facebook.com/16Leah" target="_blank">Leah's Page</a></p>
+            <p>Facebook: <a href="https://www.facebook.com/16Leah" target="_blank">Leah's Facebook</a></p>
+            <p>&copy; 2025 Ka Leah Paper Per Ream. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
