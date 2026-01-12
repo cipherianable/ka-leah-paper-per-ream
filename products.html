@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Leah's School Supplies</title>
-        <link rel="stylesheet" href="styles.css">
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <header id="header">
-            <h1><a href="#">Ka Leah Paper Per Ream</a></h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leah's School Supplies - Products</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header id="header">
+        <div class="header-container">
+            <h1><a href="index.html">Ka Leah Paper Per Ream</a></h1>
             <div id="navigation-bar">
                 <span id="menu-icon">&#9776;</span>
                 <ul id="navigation">
@@ -18,126 +19,156 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-        </header>
-
-        <div id="mobile-navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
         </div>
+    </header>
 
-<main>
-    <!-- Search Bar for filtering products -->
-    <div id="search-container">
-        <input type="text" id="search-input" placeholder="Search for items (e.g., glue, notebook)...">
+    <div id="mobile-navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </div>
-    
-    <!-- Message shown when search finds nothing -->
-    <h2 id="no-results-message">No Results Found</h2>
 
-    <!-- Product Grid Container (Uses CSS Grid) -->
-    <div id="grid">
+    <main>
+        <div id="search-container" class="centered-text">
+            <input type="text" id="search-input" placeholder="Search for items (e.g., glue, notebook)...">
+        </div>
+        
+        <h2 id="no-results-message" class="centered-text" style="display:none;">No Results Found</h2>
 
-        <!-- Category 1 -->
-        <div id="productcategory1" class="product">
-            <select>
-                <option disabled selected>Paper and Notebooks</option>
-                <option>Writing Notebooks (10 pcs): ₱220.00</option>
-                <option>Writing Pads (Grade 1, 2, 3 - 80 leaves): ₱20.00 each</option>
-                <option>Crosswise Pad (80 leaves): ₱17.00</option>
-                <option>Lengthwise Pad (80 leaves): ₱17.00</option>
-                <option>1/4 Pad (80 leaves): ₱10.00</option>
-                <option>Manila Paper: ₱9.00 each</option>
-                <option>Index Cards (100 pcs) - White: ₱65.00</option>
-                <option>Index Cards (100 pcs) - Pink: ₱115.00</option>
-                <option>Index Cards (100 pcs) - Blue: ₱115.00</option>
-            </select>
+        <div id="grid">
+            <div id="productcategory1" class="product">
+                <img src="PaperAndNotebookProducts.png" alt="Paper and Notebooks" class="category-img">
+                <h3>Paper and Notebooks</h3>
+                <div class="item-list">
+                    <div class="item" data-name="Writing Notebooks (10 pcs)" data-price="220.00"><span>Writing Notebooks (10 pcs) - ₱220.00</span><div class="item-actions"><input type="number" class="qty" value="1" min="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Writing Pads (80 leaves)" data-price="20.00"><span>Writing Pads (Grade 1, 2, 3) - ₱20.00</span><div class="item-actions"><input type="number" class="qty" value="1" min="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Crosswise Pad (80 leaves)" data-price="17.00"><span>Crosswise Pad (80 leaves) - ₱17.00</span><div class="item-actions"><input type="number" class="qty" value="1" min="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Lengthwise Pad (80 leaves)" data-price="17.00"><span>Lengthwise Pad (80 leaves) - ₱17.00</span><div class="item-actions"><input type="number" class="qty" value="1" min="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="1/4 Pad (80 leaves)" data-price="10.00"><span>1/4 Pad (80 leaves) - ₱10.00</span><div class="item-actions"><input type="number" class="qty" value="1" min="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Manila Paper" data-price="9.00"><span>Manila Paper - ₱9.00 each</span><div class="item-actions"><input type="number" class="qty" value="1" min="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Index Cards White (100 pcs)" data-price="65.00"><span>Index Cards (100 pcs) - White: ₱65.00</span><div class="item-actions"><input type="number" class="qty" value="1" min="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Index Cards Pink (100 pcs)" data-price="115.00"><span>Index Cards (100 pcs) - Pink: ₱115.00</span><div class="item-actions"><input type="number" class="qty" value="1" min="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Index Cards Blue (100 pcs)" data-price="115.00"><span>Index Cards (100 pcs) - Blue: ₱115.00</span><div class="item-actions"><input type="number" class="qty" value="1" min="1"><button class="add-btn">Add</button></div></div>
+                </div>
+            </div>
+
+            <div id="productcategory2" class="product">
+                <img src="WritingAndArtMaterials.png" alt="Writing Instruments" class="category-img">
+                <h3>Writing Instruments & Art</h3>
+                <div class="item-list">
+                    <div class="item" data-name="Flexstick Ballpen Black (12pcs)" data-price="65.00"><span>Flexstick Black (12pcs) - ₱65.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Flexstick Ballpen Red (12pcs)" data-price="70.00"><span>Flexstick Red (12pcs) - ₱70.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Flexstick Ballpen Blue (12pcs)" data-price="70.00"><span>Flexstick Blue (12pcs) - ₱70.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="HBW 2000 Ballpen Black (12pcs)" data-price="60.00"><span>HBW 2000 Black (12pcs) - ₱60.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="HBW Pencil No. 2 (12pcs)" data-price="62.00"><span>HBW Pencil No. 2 (12pcs) - ₱62.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="HBW Pencil No. 2 (Piece)" data-price="7.00"><span>HBW Pencil (Per Piece) - ₱7.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="HBW Permanent Marker" data-price="15.00"><span>HBW Permanent Marker - ₱15.00 each</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="HBW Whiteboard Marker" data-price="25.00"><span>HBW Whiteboard Marker - ₱25.00 each</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="HBW Crayons - 16s" data-price="44.00"><span>HBW Crayons (16's) - ₱44.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="HBW Crayons - 24s" data-price="55.00"><span>HBW Crayons (24's) - ₱55.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                </div>
+            </div>
+
+            <div id="productcategory3" class="product">
+                <img src="EnvelopesAndFolders.png" alt="Envelopes and Folders" class="category-img">
+                <h3>Envelopes & Folders</h3>
+                <div class="item-list">
+                    <div class="item" data-name="Brown Envelopes Short (50pcs)" data-price="115.00"><span>Brown Env. Short (50pcs) - ₱115.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Brown Envelopes Long (50pcs)" data-price="140.00"><span>Brown Env. Long (50pcs) - ₱140.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="White Folders Short (25pcs)" data-price="130.00"><span>White Folders Short (25pcs) - ₱130.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="White Folders Long (25pcs)" data-price="145.00"><span>White Folders Long (25pcs) - ₱145.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Coins Envelope Kraft (500pcs)" data-price="360.00"><span>Coins Envelope (500pcs) - ₱360.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Plastic Envelope Short (25s)" data-price="245.00"><span>Plastic Env. Short (25's) - ₱245.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Plastic Envelope Long (25s)" data-price="305.00"><span>Plastic Env. Long (25's) - ₱305.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Expanded Envelope (Colors)" data-price="16.00"><span>Expanded Envelope - ₱16.00 each</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                </div>
+            </div>
+
+            <div id="productcategory4" class="product">
+                <img src="Adhesives.png" alt="Adhesives" class="category-img">
+                <h3>Adhesives (Glue & Tape)</h3>
+                <div class="item-list">
+                    <div class="item" data-name="HBW White Glue 40gms" data-price="15.00"><span>HBW White Glue 40gms - ₱15.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="HBW Glue Stick 8g" data-price="18.00"><span>HBW Glue Stick 8g - ₱18.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Duct Tape Gray" data-price="55.00"><span>Duct Tape Gray - ₱55.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Masking Tape 1/2 inch" data-price="17.00"><span>Masking Tape 1/2 inch - ₱17.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Masking Tape 3/4 inch" data-price="23.00"><span>Masking Tape 3/4 inch - ₱23.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Armak Scotch Tape BIG 1/2" data-price="13.00"><span>Armak Tape BIG 1/2 - ₱13.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Armak Scotch Tape BIG 1 inch" data-price="22.00"><span>Armak Tape BIG 1 inch - ₱22.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="TUFF Clear Packaging Tape" data-price="25.00"><span>TUFF Packaging Tape - ₱25.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                </div>
+            </div>
+
+            <div id="productcategory5" class="product">
+                <img src="FastenersAndClips.png" alt="Fasteners" class="category-img">
+                <h3>Fasteners & Clips</h3>
+                <div class="item-list">
+                    <div class="item" data-name="Binder Clips 2 inches (12pcs)" data-price="85.00"><span>Binder Clips 2 inch (12pcs) - ₱85.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="TM Paper Fastener 70mm (50pcs)" data-price="65.00"><span>Paper Fastener (50pcs) - ₱65.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="TM Paper Clip Small (100pcs)" data-price="12.00"><span>Paper Clip Small (100pcs) - ₱12.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="TM Paper Clip Big (100pcs)" data-price="25.00"><span>Paper Clip Big (100pcs) - ₱25.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                </div>
+            </div>
+
+            <div id="productcategory6" class="product">
+                <img src="Office.png" alt="Office Supplies" class="category-img">
+                <h3>Office Papers & Accessories</h3>
+                <div class="item-list">
+                    <div class="item" data-name="Fox Bond Paper Short" data-price="320.00"><span>Fox Bond Paper Short - ₱320.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Classic Mail Bond Paper Long" data-price="380.00"><span>Classic Mail Bond Long - ₱380.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Best Print Bond Paper Long" data-price="550.00"><span>Best Print Bond Long - ₱550.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Carbonized Receipt 1/4" data-price="22.00"><span>Carbonized Receipt 1/4 - ₱22.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Vellum A4 200gsm" data-price="50.00"><span>Vellum A4 200gsm - ₱50.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Sharpener 2 hole" data-price="5.00"><span>Sharpener 2 hole - ₱5.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="TM Correction Tape" data-price="20.00"><span>TM Correction Tape - ₱20.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                    <div class="item" data-name="Staples No.35 (Box)" data-price="48.00"><span>Staples No.35 (Box) - ₱48.00</span><div class="item-actions"><input type="number" class="qty" value="1"><button class="add-btn">Add</button></div></div>
+                </div>
+            </div>
         </div>
 
-        <!-- Category 2 -->
-        <div id="productcategory2" class="product">
-            <select>
-                <option disabled selected>Writing Instruments & Art</option>
-                <option>Flexstick Ballpen (Black - 12pcs): ₱65.00</option>
-                <option>Flexstick Ballpen (Red - 12pcs): ₱70.00</option>
-                <option>Flexstick Ballpen (Blue - 12pcs): ₱70.00</option>
-                <option>HBW 2000 Ballpen (Black - 12pcs): ₱60.00</option>
-                <option>HBW Pencil No. 2 (12pcs): ₱62.00</option>
-                <option>HBW Pencil No. 2 (Per Piece): ₱7.00</option>
-                <option>HBW Permanent Marker (Red/Blue/Black): ₱15.00 each</option>
-                <option>HBW Whiteboard Marker (Red/Blue/Black): ₱25.00 each</option>
-                <option>HBW Crayons - 16's: ₱44.00</option>
-                <option>HBW Crayons - 24's: ₱55.00</option>
-            </select>
-        </div>
+        <section id="cart-section">
+            <h2 class="centered-text">Your Shopping Cart</h2>
+            <div id="cart-items"><p class="centered-text">Your cart is empty.</p></div>
+            <div id="cart-controls" style="display: none;">
+                <div class="inquiry-reason centered-text">
+                    <label for="inquiry-reason">Reason for Inquiry:</label>
+                    <select id="inquiry-reason">
+                        <option value="General Question">General Question</option>
+                        <option value="Stock Availability">Stock Availability</option>
+                        <option value="Bulk Order Request">Bulk Order Request</option>
+                    </select>
+                </div>
+                <div class="cart-buttons">
+                    <button id="inquire-whatsapp-btn">Send via WhatsApp</button>
+                    <button id="inquire-messenger-btn">Send to Messenger</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="location" class="centered-text">
+            <h2>Visit Our Store</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.353396398608!2d121.07594777408225!3d14.692596274819785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7c6e6003ce9%3A0x91692987d187a35a!2sKa%20leah&#39;%20paper%20per%20ream!5e0!3m2!1sen!2sph!4v1768225092458!5m2!1sen!2sph" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
 
-        <!-- Category 3 -->
-        <div id="productcategory3" class="product">
-            <select>
-                <option disabled selected>Envelopes & Folders</option>
-                <option>Brown Envelopes Short 50pcs: ₱115.00</option>
-                <option>Brown Envelopes Long 50pcs: ₱140.00</option>
-                <option>White Folders Short 25pcs: ₱130.00</option>
-                <option>White Folders Long 25pcs: ₱145.00</option>
-                <option>Coins Envelope Kraft 500pcs: ₱360.00</option>
-                <option>Plastic Envelope Short 25's: ₱245.00</option>
-                <option>Plastic Envelope Long 25's: ₱305.00</option>
-                <option>Expanded Envelope (Colors): ₱16.00 each</option>
-            </select>
-        </div>
-
-        <!-- Category 4 -->
-        <div id="productcategory4" class="product">
-            <select>
-                <option disabled selected>Adhesives (Glue & Tape)</option>
-                <option>HBW White Glue 40gms: ₱15.00</option>
-                <option>HBW Glue Stick 8g: ₱18.00</option>
-                <option>Duct Tape Gray: ₱55.00</option>
-                <option>Masking Tape 1/2 inch: ₱17.00</option>
-                <option>Masking Tape 3/4 inch: ₱23.00</option>
-                <option>Armak Scotch Tape BIG 1/2: ₱13.00</option>
-                <option>Armak Scotch Tape BIG 1 inch: ₱22.00</option>
-                <option>TUFF Clear Packaging Tape: ₱25.00</option>
-            </select>
-        </div>
-
-        <!-- Category 5 -->
-        <div id="productcategory5" class="product">
-            <select>
-                <option disabled selected>Fasteners & Clips</option>
-                <option>Binder Clips 2 inches (12pcs): ₱85.00</option>
-                <option>TM Paper Fastener 70mm (50pcs): ₱65.00</option>
-                <option>TM Paper Clip Small (100pcs): ₱12.00</option>
-                <option>TM Paper Clip Big (100pcs): ₱25.00</option>
-            </select>
-        </div>
-
-        <!-- Category 6 -->
-        <div id="productcategory6" class="product">
-            <select>
-                <option disabled selected>Office Papers & Accessories</option>
-                <option>Fox Bond Paper Short: ₱320.00</option>
-                <option>Classic Mail Bond Paper Long: ₱380.00</option>
-                <option>Best Print Bond Paper Long: ₱550.00</option>
-                <option>Carbonized Receipt 1/4: ₱22.00</option>
-                <option>Vellum A4 200gsm: ₱50.00</option>
-                <option>Sharpener 2 hole: ₱5.00</option>
-                <option>TM Correction Tape: ₱20.00</option>
-                <option>Staples No.35 (Box): ₱48.00</option>
-            </select>
-        </div>
-    </div>
-</main>
-        <footer id="contact">
-            <h3>Contact Us For Inquiries and Orders</h3>
-            <p>Phone: <a href="tel:+639277385656">+63 927 738 5656</a></p>
-            <p>Email: <a href="mailto:zafelei16@gmail.com">zafelei16@gmail.com</a></p>
-            <p>WhatsApp: <a href="https://wa.me/639277385656" target="_blank">+63 927 738 5656</a></p>
-            <p>Messenger: <a href="https://www.facebook.com/16Leah" target="_blank">Leah's Page</a></p>
-            <p>Facebook: <a href="https://www.facebook.com/16Leah" target="_blank">Leah's Facebook</a></p>
-            <p>&copy; 2025 Ka Leah Paper Per Ream. All rights reserved.</p>
-        </footer>
-    </body>
+    <footer id="contact" class="centered-text">
+        <h3>Contact Us For Inquiries and Orders</h3>
+        <p><strong>Business Hours: Open 24/7 &#128994;</strong></p>
+        <p>Phone: <a href="tel:+639277385656">+63 927 738 5656</a></p>
+        <p>WhatsApp: <a href="https://wa.me/639277385656" target="_blank">+63 927 738 5656</a></p>
+        <p>Messenger: <a href="https://m.me/16Leah" target="_blank">Leah's Page</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/16Leah" target="_blank">Leah's Facebook</a></p>
+        <p>&copy; 2025 Ka Leah Paper Per Ream. All rights reserved.</p>
+    </footer>
+</body>
 </html>
