@@ -1,4 +1,4 @@
-/* Basic page setup */
+/* removed margiin and padding */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -10,6 +10,17 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+#custom-note {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
 }
 
 /* Centering utility */

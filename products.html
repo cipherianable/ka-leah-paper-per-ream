@@ -133,12 +133,15 @@
             <div id="cart-items"><p class="centered-text">Your cart is empty.</p></div>
             <div id="cart-controls" style="display: none;">
                 <div class="inquiry-reason centered-text">
-                    <label for="inquiry-reason">Reason for Inquiry:</label>
-                    <select id="inquiry-reason">
-                        <option value="General Question">General Question</option>
-                        <option value="Stock Availability">Stock Availability</option>
-                        <option value="Bulk Order Request">Bulk Order Request</option>
-                    </select>
+                    <label for="inquiry-reason">What is this for?</label>
+			<select id="inquiry-reason">
+    				<option value="I want to place this order">I want to order now</option>
+  				<option value="Checking availability">Are these items in stock?</option>
+    				<option value="Bulk/Wholesale Inquiry">Inquiring about Bulk/Wholesale</option>
+    				<option value="Other Question">Other Question</option>
+			</select>
+            <textarea id="custom-note" rows="3" placeholder="Add an optional note (e.g., specific colors, delivery time)..."></textarea>
+    </div>
                 </div>
                 <div class="cart-buttons">
                     <button id="inquire-whatsapp-btn">Send via WhatsApp</button>

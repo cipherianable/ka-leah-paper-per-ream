@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Mobile Menu Toggle
     const menuIcon = document.getElementById('menu-icon');
     const mobileNav = document.getElementById('mobile-navigation');
 
@@ -12,13 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileNav.style.display = 'block';
             }
         });
-        
+
         window.addEventListener('resize', () => {
             if (window.innerWidth > 680) mobileNav.style.display = 'none';
         });
     }
 
-    // Search Logic
     const searchInput = document.getElementById('search-input');
     const categories = document.querySelectorAll('.product');
     const noResultsMessage = document.getElementById('no-results-message');
@@ -30,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             categories.forEach(cat => {
                 const text = cat.innerText.toLowerCase();
-                
                 if (text.includes(value)) {
                     cat.style.display = 'flex'; 
                     found = true;
@@ -47,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Cart Logic
     let cart = [];
     const cartItemsDiv = document.getElementById('cart-items');
     const cartControls = document.getElementById('cart-controls');
@@ -64,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cartControls.style.display = 'block';
         let html = '';
         let total = 0;
-        
+
         for(let i = 0; i < cart.length; i++) {
             let item = cart[i];
             let itemTotal = item.price * item.qty;
@@ -76,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button onclick="removeItem(${i})" style="background:#ff4444; color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer;">X</button>
             </div>`;
         }
-        
+
         html += `<div style="text-align:right; font-weight:bold; margin-top:10px;">Total: ₱${total.toFixed(2)}</div>`;
         cartItemsDiv.innerHTML = html;
     }
@@ -116,26 +112,52 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartUI();
     };
 
-    function createOrderMessage() {
-        let msg = "Hello Ka Leah! I would like to order:\n\n";
+    function createOrderMessage(isWhatsApp) {
+        const reason = document.getElementById('inquiry-reason').value;
+        const note = document.getElementById('custom-note').value; 
         let total = 0;
+        let msg = "";
+
+        if (isWhatsApp) {
+
+            msg = `Hi Ka Leah! I was browsing your website and ${reason}.\n\n*Here is my list:* \n`;
+        } else {
+
+            msg = `Hi Ka Leah! 👋\n\nI was browsing your website and ${reason}.\n\n*Here is my list:* \n`;
+        }
 
         cart.forEach(item => {
-            msg += `- ${item.qty}x ${item.name}\n`;
+            if (isWhatsApp) {
+
+                msg += `- ${item.qty}x ${item.name}\n`;
+            } else {
+
+                msg += `✅ ${item.qty}x ${item.name}\n`;
+            }
             total += (item.price * item.qty);
         });
 
-        const reason = document.getElementById('inquiry-reason').value;
-        msg += `\nTotal: ₱${total.toFixed(2)}`;
-        msg += `\nReason: ${reason}`;
-        
+        msg += `\n*Estimated Total:* ₱${total.toFixed(2)}`;
+
+        if (note.trim() !== "") {
+            msg += `\n\n*My Notes:* ${note}`;
+        }
+
+        msg += `\n\nPlease let me know the next steps. Thank you!`;
+
         return msg;
     }
 
     const waBtn = document.getElementById('inquire-whatsapp-btn');
     if(waBtn) {
         waBtn.addEventListener('click', () => {
-            const message = createOrderMessage();
+            if (cart.length === 0) {
+                alert("Your cart is empty! Please add items first.");
+                return;
+            }
+
+            const message = createOrderMessage(true); 
+
             const url = `https://wa.me/639277385656?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         });
@@ -144,9 +166,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const fbBtn = document.getElementById('inquire-messenger-btn');
     if(fbBtn) {
         fbBtn.addEventListener('click', () => {
-            const message = createOrderMessage();
+            if (cart.length === 0) {
+                alert("Your cart is empty! Please add items first.");
+                return;
+            }
+
+            const message = createOrderMessage(false);
+
             navigator.clipboard.writeText(message).then(() => {
-                alert("Order copied! Paste it in Messenger.");
+                alert("Order copied to clipboard!\n\nMessenger will open now. Please PASTE the message there.");
+                window.open("https://m.me/16Leah", "_blank");
+            }).catch(err => {
+                alert("Could not auto-copy. Please check your cart.");
                 window.open("https://m.me/16Leah", "_blank");
             });
         });
