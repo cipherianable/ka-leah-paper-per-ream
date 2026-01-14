@@ -12,15 +12,22 @@ a {
   color: inherit;
 }
 
+#inquiry-reason, 
 #custom-note {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    margin-top: 15px;
     font-size: 1rem;
-    font-family: inherit;
-    resize: vertical;
+    font-family: inherit; /* Forces textarea to use the same font as the page */
+    display: block;       /* Ensures they fill the container width */
+    background-color: #fff;
+}
+
+/* Specific style just for the note box */
+#custom-note {
+    margin-top: 15px;
+    resize: vertical; /* Allows user to make it taller, but not wider */
 }
 
 /* Centering utility */
@@ -278,14 +285,6 @@ main {
 }
 #inquire-messenger-btn {
   background: #0084ff;
-}
-#inquiry-reason {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-top: 15px;
-  font-size: 1rem;
 }
 
 /* Map Section */
