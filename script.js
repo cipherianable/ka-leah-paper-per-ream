@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Mobile Menu Toggle ---
     const menuIcon = document.getElementById('menu-icon');
     const mobileNav = document.getElementById('mobile-navigation');
 
@@ -11,12 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileNav.style.display = 'block';
             }
         });
-
+        
         window.addEventListener('resize', () => {
             if (window.innerWidth > 680) mobileNav.style.display = 'none';
         });
     }
 
+    // --- Search Logic ---
     const searchInput = document.getElementById('search-input');
     const categories = document.querySelectorAll('.product');
     const noResultsMessage = document.getElementById('no-results-message');
@@ -44,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Shopping Cart Logic ---
     let cart = [];
     const cartItemsDiv = document.getElementById('cart-items');
     const cartControls = document.getElementById('cart-controls');
@@ -60,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cartControls.style.display = 'block';
         let html = '';
         let total = 0;
-
+        
         for(let i = 0; i < cart.length; i++) {
             let item = cart[i];
             let itemTotal = item.price * item.qty;
@@ -72,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button onclick="removeItem(${i})" style="background:#ff4444; color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer;">X</button>
             </div>`;
         }
-
+        
         html += `<div style="text-align:right; font-weight:bold; margin-top:10px;">Total: ₱${total.toFixed(2)}</div>`;
         cartItemsDiv.innerHTML = html;
     }
@@ -112,42 +115,47 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartUI();
     };
 
+    // --- Message Generator ---
     function createOrderMessage(isWhatsApp) {
         const reason = document.getElementById('inquiry-reason').value;
         const note = document.getElementById('custom-note').value; 
         let total = 0;
         let msg = "";
 
+        // Header
         if (isWhatsApp) {
-
+            // Clean version for WhatsApp (No Wave Emoji to prevent link errors)
             msg = `Hi Ka Leah! I was browsing your website and ${reason}.\n\n*Here is my list:* \n`;
         } else {
-
+            // Fancy version for Messenger
             msg = `Hi Ka Leah! 👋\n\nI was browsing your website and ${reason}.\n\n*Here is my list:* \n`;
         }
 
+        // Items Loop
         cart.forEach(item => {
             if (isWhatsApp) {
-
+                // Use a Dash (-) instead of Checkmark Emoji
                 msg += `- ${item.qty}x ${item.name}\n`;
             } else {
-
+                // Use Checkmark Emoji
                 msg += `✅ ${item.qty}x ${item.name}\n`;
             }
             total += (item.price * item.qty);
         });
 
+        // Footer
         msg += `\n*Estimated Total:* ₱${total.toFixed(2)}`;
-
+        
         if (note.trim() !== "") {
             msg += `\n\n*My Notes:* ${note}`;
         }
 
         msg += `\n\nPlease let me know the next steps. Thank you!`;
-
+        
         return msg;
     }
 
+    // --- WhatsApp Button ---
     const waBtn = document.getElementById('inquire-whatsapp-btn');
     if(waBtn) {
         waBtn.addEventListener('click', () => {
@@ -157,12 +165,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const message = createOrderMessage(true); 
-
-            const url = `https://wa.me/639277385656?text=${encodeURIComponent(message)}`;
+            
+            // FIX: Use full API URL instead of wa.me to reduce ISP errors
+            const url = `https://api.whatsapp.com/send?phone=639277385656&text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         });
     }
 
+    // --- Messenger Button ---
     const fbBtn = document.getElementById('inquire-messenger-btn');
     if(fbBtn) {
         fbBtn.addEventListener('click', () => {
@@ -172,9 +182,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const message = createOrderMessage(false);
-
+            
             navigator.clipboard.writeText(message).then(() => {
                 alert("Order copied to clipboard!\n\nMessenger will open now. Please PASTE the message there.");
+                // Use standard link, but note that mobile data often blocks redirects
                 window.open("https://m.me/16Leah", "_blank");
             }).catch(err => {
                 alert("Could not auto-copy. Please check your cart.");
