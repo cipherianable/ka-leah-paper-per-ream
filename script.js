@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Header
         if (isWhatsApp) {
-            // Clean version for WhatsApp (No Wave Emoji to prevent link errors)
+            // Clean version for WhatsApp
             msg = `Hi Ka Leah! I was browsing your website and ${reason}.\n\n*Here is my list:* \n`;
         } else {
             // Fancy version for Messenger
@@ -134,10 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Items Loop
         cart.forEach(item => {
             if (isWhatsApp) {
-                // Use a Dash (-) instead of Checkmark Emoji
                 msg += `- ${item.qty}x ${item.name}\n`;
             } else {
-                // Use Checkmark Emoji
                 msg += `✅ ${item.qty}x ${item.name}\n`;
             }
             total += (item.price * item.qty);
@@ -165,8 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const message = createOrderMessage(true); 
-            
-            // FIX: Use full API URL instead of wa.me to reduce ISP errors
             const url = `https://api.whatsapp.com/send?phone=639277385656&text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         });
@@ -185,11 +181,15 @@ document.addEventListener('DOMContentLoaded', () => {
             
             navigator.clipboard.writeText(message).then(() => {
                 alert("Order copied to clipboard!\n\nMessenger will open now. Please PASTE the message there.");
-                // Use standard link, but note that mobile data often blocks redirects
-                window.open("https://m.me/16Leah", "_blank");
+                
+                // FIX: Use 'messenger.com' instead of 'm.me'
+                // This is the full desktop site, which avoids SSL redirect errors.
+                // On mobile, this will still ask to open the Messenger App.
+                window.open("https://www.messenger.com/t/16Leah", "_blank");
+                
             }).catch(err => {
                 alert("Could not auto-copy. Please check your cart.");
-                window.open("https://m.me/16Leah", "_blank");
+                window.open("https://www.messenger.com/t/16Leah", "_blank");
             });
         });
     }
