@@ -1,74 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ka Leah Paper Per Ream</title>
-        <link rel="stylesheet" href="styles.css">
-        <script src="script.js" defer></script> 
-    </head>
-    <body>
-        <header id="header">
-            <div class="header-container">
-                <h1><a href="#">Ka Leah Paper Per Ream</a></h1>
-                <div id="navigation-bar">
-                    <span id="menu-icon">&#9776;</span> 
-                    <ul id="navigation">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
 
-        <div id="mobile-navigation">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ka Leah Paper Per Ream | Premium School & Office Supplies</title>
+    <meta name="description"
+        content="Quality school and office supplies in Quezon City. Order paper per ream, notebooks, writing instruments, and more. Open 24/7 for all your stationery needs.">
+    <meta name="keywords"
+        content="paper per ream, school supplies, office supplies, Quezon City, stationery, notebooks, writing instruments">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://klppr.tech/">
+    <meta property="og:title" content="Ka Leah Paper Per Ream | Premium School & Office Supplies">
+    <meta property="og:description" content="Quality school and office supplies in Quezon City. Open 24/7.">
+    <meta property="og:image" content="https://klppr.tech/hero_premium.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Ka Leah Paper Per Ream | Premium School & Office Supplies">
+    <meta property="twitter:description" content="Quality school and office supplies in Quezon City. Open 24/7.">
+    <meta property="twitter:image" content="https://klppr.tech/hero_premium.jpg">
+    <link rel="canonical" href="https://klppr.tech/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="header-container">
+            <div class="logo">
+                <h1><a href="index.html">Ka Leah<span> Paper Per Ream</span></a></h1>
+            </div>
+            <nav id="navigation-bar" aria-label="Main Navigation">
+                <button id="menu-icon" aria-label="Toggle Menu" aria-expanded="false">&#9776;</button>
+                <ul id="navigation">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="products.html#cart-section">Cart</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <main>
-            <div class="hero-section">
-                <div class="hero-overlay">
-                    <h2 id="introductory-h2">Ka Leah Paper Per Ream</h2>
-                    <p id="introductory-p">Quality supplies for every student.</p>
+    <div id="mobile-navigation">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="products.html#cart-section">Cart</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="hero-section" aria-labelledby="introductory-h2">
+            <div class="hero-content">
+                <h2 id="introductory-h2">Quality Supplies for Future Leaders</h2>
+                <p id="introductory-p">Premium paper and stationery delivered with care. Open 24/7 for your convenience.
+                </p>
+                <div class="hero-cta">
+                    <a href="products.html" class="btn btn-primary">Browse Products</a>
+                    <a href="#how-to-order" class="btn btn-secondary">How to Order</a>
                 </div>
             </div>
+            <div class="hero-visual">
+                <img src="hero_premium.jpg" alt="Premium modern desk setup with notebooks and stationery" width="1024"
+                    height="576" loading="eager" class="hero-img">
+            </div>
+        </section>
 
-            <section id="how-to-order" class="centered-text">
-                <h2>How to Order?</h2>
-                <div class="steps">
-                    <p>1. Browse our products on the <a href="products.html" style = "color: #5555ff; font-weight: bold;">products page</a>.</p>
-                    <p>2. Select your items and click the <strong>Messenger</strong> or <strong>WhatsApp</strong> button.</p>
-                    <p>3. The order details will be ready for you to send to us instantly.</p>
-                </div>
-            </section>
+        <section id="how-to-order" class="centered-text">
+            <h2>How to Order?</h2>
+            <div class="steps">
+                <p>1. Browse our products on the <a href="products.html"
+                        style="color: #5555ff; font-weight: bold;">products page</a>.</p>
+                <p>2. Select your items and click the <strong>Messenger</strong> or <strong>WhatsApp</strong> button.
+                </p>
+                <p>3. The order details will be ready for you to send to us instantly.</p>
+            </div>
+        </section>
 
-            <section id="location" class="centered-text">
-                <h2>Visit Our Store</h2>
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.353396398608!2d121.07594777408225!3d14.692596274819785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7c6e6003ce9%3A0x91692987d187a35a!2sKa%20leah&#39;%20paper%20per%20ream!5e0!3m2!1sen!2sph!4v1768225092458!5m2!1sen!2sph" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </section>
-        </main>
+        <section id="location" class="centered-text">
+            <h2>Visit Our Store</h2>
+            <div class="map-container">
+                <iframe title="Ka Leah Paper Per Ream Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.353396398608!2d121.07594777408225!3d14.692596274819785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7c6e6003ce9%3A0x91692987d187a35a!2sKa%20leah&#39;%20paper%20per%20ream!5e0!3m2!1sen!2sph!4v1768225092458!5m2!1sen!2sph"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
 
-        <footer id="contact" class="centered-text">
-            <h3>Contact Us For Inquiries and Orders</h3>
-            <p><strong>Business Hours: Open 24/7 &#128994;</strong></p>
-            <p>Phone: <a href="tel:+639277385656">+63 927 738 5656</a></p>
-            <p>WhatsApp: <a href="https://wa.me/639277385656" target="_blank">+63 927 738 5656</a></p>
-            <p>Messenger: <a href="https://m.me/16Leah" target="_blank">Leah's Page</a></p>
-            <p>Facebook: <a href="https://www.facebook.com/16Leah" target="_blank">Leah's Facebook</a></p>
-            <p>&copy; 2026 Ka Leah Paper Per Ream. All rights reserved.</p>
-        </footer>
-    </body>
+    <footer id="footer">
+        <div class="footer-icons">
+            <a href="tel:+639277385656" class="footer-icon-link" aria-label="Phone">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
+                </svg>
+            </a>
+            <a href="https://wa.me/639277385656" target="_blank" rel="noopener noreferrer" class="footer-icon-link"
+                aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M16.75,13.96C17,14.09 17.16,14.16 17.21,14.26C17.27,14.37 17.25,14.87 17.03,15.44C16.8,16 15.85,16.5 15.35,16.5C14.85,16.5 14.38,16.31 13.12,15.81C11.13,15.03 9.35,13.06 8.5,11.83C8.42,11.71 7.82,10.92 7.82,10.1C7.82,9.28 8.24,8.88 8.41,8.71C8.58,8.54 8.79,8.46 8.92,8.46C9.04,8.46 9.17,8.46 9.27,8.46C9.4,8.46 9.58,8.42 9.75,8.83C9.92,9.25 10.33,10.25 10.38,10.35C10.43,10.45 10.43,10.58 10.37,10.71C10.31,10.84 10.26,10.91 10.16,11.03C10.06,11.15 9.96,11.23 9.87,11.36C9.77,11.46 9.66,11.58 9.78,11.78C9.9,11.98 10.33,12.68 10.96,13.25C11.78,13.98 12.45,14.21 12.65,14.31C12.85,14.41 12.97,14.4 13.09,14.26C13.21,14.12 13.61,13.65 13.71,13.48C13.84,13.31 13.97,13.35 14.15,13.42C14.33,13.48 15.3,13.96 15.55,14.07C15.8,14.18 16.22,14.2 16.43,14.16C16.63,14.12 16.88,14.01 17.13,13.87L16.75,13.96M12,2A10,10 0 0,0 2,12C2,13.79 2.47,15.5 3.36,17L2,22L7.14,20.67C8.59,21.53 10.25,22 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                </svg>
+            </a>
+            <a href="https://m.me/16Leah" target="_blank" rel="noopener noreferrer" class="footer-icon-link"
+                aria-label="Messenger">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12,2C6.36,2,2,6.13,2,11.7c0,2.98,1.24,5.59,3.25,7.41c0.1,0.09,0.16,0.22,0.16,0.35c0,0.01,0,0.02,0,0.03 L5.3,21.6c-0.02,0.2,0.18,0.36,0.36,0.29l2.29-1c0.12-0.05,0.25-0.06,0.37-0.02c1.13,0.34,2.33,0.53,3.57,0.53c5.64,0,10-4.13,10-9.7 C22,6.13,17.64,2,12,2z M13.1,14.5l-2.4-2.5l-4.7,2.5c-0.34,0.18-0.72-0.21-0.49-0.54l5.1-6.8c0.23-0.31,0.7-0.31,0.93,0l2.4,2.5 l4.7-2.5c0.34-0.18,0.72,0.21,0.49,0.54l-5.1,6.8C13.8,14.8,13.33,14.8,13.1,14.5z" />
+                </svg>
+            </a>
+            <a href="https://www.facebook.com/16Leah" target="_blank" rel="noopener noreferrer" class="footer-icon-link"
+                aria-label="Facebook">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
+                </svg>
+            </a>
+        </div>
+        <p><strong>Open 24/7</strong> | Phone: +63 927 738 5656</p>
+        <p>&copy; 2026 Ka Leah Paper Per Ream. All rights reserved.</p>
+    </footer>
+</body>
+
 </html>
